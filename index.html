@@ -35,7 +35,8 @@
           <p>Верстка на HTML и CSS<br> Адаптация под все устройства</p>
         </div>
       </div>
-      <a class="main-down" href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i></i></a>
+      <a class="main-down" href="#"><i class="fa fa-chevron-down" aria-hidden="true"></i>
+</a>
     </div>
 
 
@@ -44,19 +45,19 @@
         <div class="container">
           <h2 class="section-header">Портфолио</h2>
           <div class="row">
-            <div class="col-lg-4 col-xs-4 col-md-4">
+            <div class="col-lg-4 col-md-4">
               <div class="portfolio-block">
               <img src="img/portfolio/1.jpg" alt="Работа №1">
               <a data-toggle="modal" data-work='work-1' href="#work">Смотреть работу</a>
               </div>
             </div>
-            <div class="col-lg-4 col-xs-4 col-md-4">
+            <div class="col-lg-4  col-md-4">
               <div class="portfolio-block">
               <img src="img/portfolio/2.jpg" alt="Работа №2">
               <a data-toggle="modal" data-work='work-2' href="#work">Смотреть работу</a>
               </div>
             </div>
-            <div class="col-lg-4 col-xs-4 col-md-4">
+            <div class="col-lg-4 col-md-4">
               <div class="portfolio-block">
               <img src="img/portfolio/3.jpg" alt="Работа №3">
               <a data-toggle="modal" data-work='work-3' href="#work">Смотреть работу</a>
@@ -79,9 +80,11 @@
      <div class="social-links">
        <a href="https://vk.com/id406923731"><i class="fa fa-vk" aria-hidden="true"></i>
 </a>
-       <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i>
+       <a href="https://www.instagram.com/dmitrii_volchenko/"><i class="fa fa-instagram" aria-hidden="true"></i>
+
 </a>
-       <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i>
+       <a href="https://twitter.com/VolchenkoDmit"><i class="fa fa-twitter" aria-hidden="true"></i>
+
 </a>
      </div>
    </div>
@@ -122,6 +125,15 @@
      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+      <script>
+        $(function() {
+          $(".main-down").click(function(){
+            $("html, body").animate({
+              scrollTop : $("portfolio").offset().top
+            }, 800 );
+          });
+        };
+      </script>
       <script>
       $(function() {
         var link = $('a[data-toggle="modal"]');
