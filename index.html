@@ -45,19 +45,19 @@
         <div class="container">
           <h2 class="section-header">Портфолио</h2>
           <div class="row">
-            <div class="col-lg-4 col-md-4">
+            <div class="col-lg-4">
               <div class="portfolio-block">
               <img src="img/portfolio/1.jpg" alt="Работа №1">
               <a data-toggle="modal" data-work='work-1' href="#work">Смотреть работу</a>
               </div>
             </div>
-            <div class="col-lg-4  col-md-4">
+            <div class="col-lg-4">
               <div class="portfolio-block">
               <img src="img/portfolio/2.jpg" alt="Работа №2">
               <a data-toggle="modal" data-work='work-2' href="#work">Смотреть работу</a>
               </div>
             </div>
-            <div class="col-lg-4 col-md-4">
+            <div class="col-lg-4">
               <div class="portfolio-block">
               <img src="img/portfolio/3.jpg" alt="Работа №3">
               <a data-toggle="modal" data-work='work-3' href="#work">Смотреть работу</a>
@@ -88,8 +88,9 @@
 </a>
      </div>
    </div>
-  <div class="col-lg-3"<strong>Напишите мне</strong><br>
-    <a href="https://vk.com/page-777107_28406709" class="offer-btn">Заказать сайт</a></div> 
+        <div class="col-lg-3"><strong>Напишите мне</strong><br>
+        <a href="https://vk.com/page-777107_28406709" class="offer-btn">Заказать сайт</a>
+        </div> 
   </div>
  </div> 
 
@@ -102,48 +103,31 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button submit reset" class="close" data-dismss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-         <h4 class="modal-title">Работа №1</h4></div>
-        <div class="modal-body">
-          <div class="row">
-         <div class="col-lg-5">
-           <img src="img/portfolio/1.jpg" alt="Первая работа">
-         </div>
-         <div class="col-lg-7">
-           <h4> Сайт для ресторана</h4>
-           <p>Описание выполненной работы</p>
-           <a href="https://vk.com/id406923731" class="modal-btn">Заказать сайт</a>
-         </div> 
-         </div>
+          <button type="button" class="btn btn-default" data-dismiss="modal">X</button>
+          <h4 class="modal-title">Описание работы</h4>
         </div>
+        <div class="modal-body"></div>
+          	
+          </div>
+        	</div>
         </div>
     </div>
   </div>
- 
  
   
      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
       <script>
-        $(function() {
-          $(".main-down").click(function(){
-            $("html, body").animate({
-              scrollTop : $("portfolio").offset().top
-            }, 800 );
-          });
-        };
+      	$(function() {
+      		var link = $('a[data-toggle="modal"]');
+      		link.on('click', function(event) {
+      			var work = $(this).attr('data-work');
+      			var modal = $('.modal');
+      			modal.find('.modal-body').load(work+'.html');
+      		});
+      	}); 
       </script>
-      <script>
-      $(function() {
-        var link = $('a[data-toggle="modal"]');
-        link.on('click', function(event) {
-          var work = $(this).attr('data-work');
-          var modal = $('.modal');
-          modal.find('.modal-body').load(work+'.html');
-        });
-      });
-    </script>
     
   </body>
 </html>
